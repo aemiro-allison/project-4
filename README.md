@@ -4,7 +4,7 @@ Take back control of your life. Fight off your overwelming load of things to do 
 ## Schedule for Completion
 
 ### Time Priority Matrix
-![OnTrack Time Priority Matrix](./on-track-time-priority-matrix.jpg)
+![OnTrack Time Priority Matrix](./readme-assets/on-track-time-priority-matrix.jpg)
 
 ### Project Time-Line
 Task | Amount of time
@@ -27,10 +27,10 @@ As a user, I can group my tasks into groups or more specifically, sprints.
 As a user, I can view a calendar showing all of tasks to be done that have been intelligently re-ordered for maximum efficiency.
 
 ## Wireframes
-![OnTrack Wireframe](./on-track-wireframe.jpg)
+![OnTrack Wireframe](./readme-assets/on-track-wireframe.jpg)
 
 Calendar View
-![OnTrack Calendar View](./on-track-calendar.jpg)
+![OnTrack Calendar View](./readme-assets/on-track-calendar.jpg)
 
  
   
