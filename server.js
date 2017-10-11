@@ -5,15 +5,21 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const taskRoutes = require('./routes/task-routes');
 const groupRoutes = require('./routes/group-routes');
-// const passport = require('passport');
+const authRoutes = require('./auth/routes');
+const passport = require('passport');
+const jwt = require('./auth/jwt');
+const { errorHandler } = require('./auth/middlewares');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(express.static(path.join(__dirname, 'client')));
+passport.use(jwt);
+
 app.use(logger('dev'));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(passport.initialize());
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.get('/', (req, res) => {
   res.json({
@@ -21,19 +27,17 @@ app.get('/', (req, res) => {
   });
 });
 
+
 app.use('/tasks', taskRoutes);
 app.use('/groups', groupRoutes);
+app.use('/auth', authRoutes);
 
 app.use('*', (req, res) => {
   res.json({
     message: 'Page Not Found',
   });
-}, (err, req, res, next) => {
-  res.json({
-    err,
-    message: 'Oops, an error occured.',
-  });
-});
+}, errorHandler);
+
 
 app.listen(PORT, () => {
   console.log(`
