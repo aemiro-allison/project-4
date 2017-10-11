@@ -4,6 +4,7 @@ const logger = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
 const taskRoutes = require('./routes/task-routes');
+const groupRoutes = require('./routes/group-routes');
 // const passport = require('passport');
 
 const app = express();
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/tasks', taskRoutes);
+app.use('/groups', groupRoutes);
 
 app.use('*', (req, res) => {
   res.json({
