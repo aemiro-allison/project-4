@@ -49,17 +49,17 @@ Post MVP features and why go here...
 ### Schedule for Completion
 Tasks | Priority | Date | Estimated time | Time Invested
 --- | --- | --- | --- | ---
-Creating Database              | H | 10/10 | 12hrs | -
-Setting up Node+Express        | H | 10/11 | 4hrs  | -
-Adding authentication          | H | 10/11 | 8hrs  | -
+Creating Database              | L | 10/10 | 12hrs | - 2hrs
+Setting up Node+Express        | H | 10/11 | 4hrs  | - 2hrs
+Adding authentication          | L | 10/11 | 8hrs  | - 1hrs
 Setting up React App           | H | 10/11 | 4hrs  | -
 Structuring React App          | H | 10/11 | 2hrs  | -
 Building React UI Components   | H | 10/12 | 4hrs  | -
 Styling the App                | H | everyday | 12hrs | -
 Calendar View                  | H | 10/13 | 12hrs | -
 Time Analytical Engine         | H | 10/13 | 24hrs | -
-Deploying App                  | H | 10/14 | 2hrs  | -
-Editing Readme                 | H | everyday | 6hrs | -
+Deploying App                  | L | 10/14 | 2hrs  | -
+Editing Readme                 | M | everyday | 6hrs | -
 
 ### User Stories
 TODO: graphically represent user stories.
