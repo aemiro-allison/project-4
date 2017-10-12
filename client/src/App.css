@@ -1,28 +1,76 @@
-.App {
-  text-align: center;
-}
+html, body {
+  min-height: 100%; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.button {
+  padding: 0.75rem 1rem;
+  background: #444;
   color: white;
-}
+  margin: 0.5rem;
+  text-decoration: none;
+  border-radius: 4px; }
 
-.App-title {
-  font-size: 1.5em;
-}
+.call-to-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around; }
 
-.App-intro {
-  font-size: large;
-}
+.top-header {
+  height: 3vh;
+  background: yellow;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between; }
+  .top-header a {
+    text-decoration: none;
+    color: #444;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline; }
+  .top-header-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start; }
+  .top-header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .top-header-right {
+    flex: 1; }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+main#landing-page {
+  min-height: calc(100vh - (2 * 16px) - 2rem - 6vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  margin: 0 auto; }
+
+#landing-page-desc {
+  max-width: 40vw;
+  min-width: 300px;
+  margin: 2rem;
+  color: #444; }
+
+.bottom-footer {
+  height: 3vh;
+  padding: 1rem;
+  background: #444;
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.title {
+  text-align: center;
+  padding: 1rem 0; }
+  .title small {
+    font-style: italic; }
+
+.page {
+  min-height: calc(100vh - (2 * 16px) - 2rem - 6vh); }
