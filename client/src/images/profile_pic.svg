@@ -1,0 +1,11 @@
+<svg id="profile_pic" xmlns="http://www.w3.org/2000/svg" viewBox="1250 510 273.8 301.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #dedede;
+      }
+    </style>
+  </defs>
+  <path id="Path_1" data-name="Path 1" class="cls-1" d="M250,291.6a95.8,95.8,0,1,1,95.8-95.8A95.94,95.94,0,0,1,250,291.6Zm0-164.3a68.4,68.4,0,1,0,68.4,68.4A68.5,68.5,0,0,0,250,127.3Z" transform="translate(1136.9 410)"/>
+  <path id="Path_2" data-name="Path 2" class="cls-1" d="M386.9,401.1H359.5a109.5,109.5,0,0,0-219,0H113.1c0-75.5,61.4-136.9,136.9-136.9S386.9,325.6,386.9,401.1Z" transform="translate(1136.9 410)"/>
+</svg>
