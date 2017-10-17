@@ -6,19 +6,31 @@ const groupTable = 'groups';
 Group.all = () =>
   db.query(`SELECT * FROM ${groupTable}`);
 
-Group.findOne = (field, value) =>
+Group.findAllByUser = id =>
+  db.query(`
+    SELECT * FROM ${groupTable}
+    WHERE user_id = $1`, [id]);
+
+Group.findOne = (field, value, userId) =>
   db.one(`
     SELECT * FROM ${groupTable}
-    WHERE ${field} = $1`, [value]);
+    WHERE ${field} = $1 AND user_id = $2`, [value, userId]);
+
+Group.getTasksForOne = (id, userId) =>
+  db.manyOrNone(`
+    SELECT * FROM tasks
+    WHERE group_id = $1 AND user_id = $2
+  `, [id, userId]);
 
 Group.create = group =>
   db.one(`
     INSERT INTO ${groupTable}
-    (priority_lvl, estimated_time, attributes)
+    (name, description, attributes, user_id)
     VALUES
     (
-    $/priority_lvl/,
-    $/estimated_time/,
+    $/name/,
+    $/description/,
+    $/user_id/,
     $/attributes/
     )
     RETURNING *`, group);
@@ -27,11 +39,11 @@ Group.update = group =>
   db.one(`
     UPDATE ${groupTable}
     SET
-    priority_lvl = $/priority_lvl/,
-    estimated_time = $/estimated_time/,
+    name = $/name/,
+    description = $/description/,
     attributes = $/attributes/
     WHERE
-    id = $/id/
+    id = $/id/ AND user_id = $/user_id/
     RETURNING *`, group);
 
 Group.destroy = id =>
