@@ -21,16 +21,14 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(express.static(path.join(__dirname, 'client')));
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'home route/page.',
-  });
-});
-
 
 app.use('/tasks', taskRoutes);
 app.use('/groups', groupRoutes);
 app.use('/auth', authRoutes);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 app.use('*', (req, res) => {
   res.json({
