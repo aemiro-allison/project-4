@@ -2,17 +2,39 @@ const Group = require('../models/group');
 
 const groupController = {};
 
-const makeGroup = (body, obj = {}) =>
-  Object.assign({}, {
-    id: null,
-    priority_lvl: null,
-    estimated_time: null,
+const getNewBody = (body) => {
+  const newBody = {
     attributes: {},
-  }, body, obj);
+    user_id: null,
+  };
+
+  Object.keys(body).forEach((prop) => {
+    if (prop.includes('attributes.')) {
+      const name = prop.replace(/attributes./, '');
+      newBody.attributes[name] = body[prop];
+    } else if (prop === 'user') {
+      newBody.user_id = body[prop].user_id;
+    } else {
+      newBody[prop] = body[prop];
+    }
+  });
+
+  return newBody;
+};
+
+const makeGroup = (body, obj = {}) => {
+  const newBody = getNewBody(body);
+
+  return Object.assign({}, {
+    name: null,
+    description: null,
+    attributes: {},
+  }, newBody, obj);
+};
 
 groupController.index = async (req, res, next) => {
   try {
-    const groups = await Group.all();
+    const groups = await Group.findAllByUser(req.query.user_id);
     res.json({ groups });
   } catch (e) {
     next(e);
@@ -21,10 +43,20 @@ groupController.index = async (req, res, next) => {
 
 groupController.show = async (req, res, next) => {
   try {
-    const group = await Group.findOne('id', req.params.id);
+    const group = await Group.findOne(
+      'id',
+      req.params.id,
+      req.params.user_id,
+    );
+
+    const tasks = await Group.getTasksForOne(
+      req.params.id,
+      req.params.user_id,
+    );
 
     res.json({
       group,
+      tasks,
       message: 'Successfully got group.',
     });
   } catch (e) {
