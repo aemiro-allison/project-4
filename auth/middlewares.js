@@ -106,5 +106,5 @@ module.exports.errorHandler = (err, req, res, next) => {
     'error': `Contact devs to resolve issue: ${err.message}`,
   })[err.name] || 'Oops, something went wrong!';
 
-  res.json({ message });
+  res.json({ message, err });
 };

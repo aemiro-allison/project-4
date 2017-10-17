@@ -11,7 +11,7 @@ const jwt = require('./auth/jwt');
 const { errorHandler } = require('./auth/middlewares');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 
 passport.use(jwt);
 
@@ -19,7 +19,7 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.resolve(__dirname, 'client', 'build')));
 
 
 app.use('/tasks', taskRoutes);
@@ -27,7 +27,7 @@ app.use('/groups', groupRoutes);
 app.use('/auth', authRoutes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
 app.use('*', (req, res) => {
