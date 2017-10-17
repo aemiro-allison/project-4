@@ -1,0 +1,14 @@
+.group {
+
+}
+
+.group-item {
+  padding: 0.125rem 0.25rem;
+}
+
+.group-item > .title {
+  color: #818181;
+}
+
+.group-item > .value {
+}

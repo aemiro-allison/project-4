@@ -1,0 +1,113 @@
+.day {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem;
+}
+
+.date {
+  text-align: center;
+  padding: 0.5rem;
+  height: 2.75rem;
+  font-size: 0.9rem;
+  color: #f3f3f3;
+}
+
+.time-slot {
+  position: relative;
+  line-height: 2.5rem;
+  flex: 1;
+  color: #333;
+  font-size: 0.8rem;
+  /*visibility: hidden;*/
+}
+
+.time-slot:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 2px;
+  border-bottom: 0.1rem solid #333;
+  visibility: visible;
+}
+
+.time-slot:nth-child(even):after {
+  border-bottom: 0.1rem solid #333;
+}
+
+.time-slot:nth-child(odd):after {
+  width: 30px;
+}
+
+.calendar-task {
+  height: 2.5rem;
+}
+
+.calendar-task:after {
+  content: attr(text);
+  display: block;
+  position: relative;
+  z-index: 0;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 250%;
+  padding: 0 0.2rem;
+  background: rgba(255,255,255,0.1);
+  visibility: visible;
+}
+
+
+/*.group-1, .task-1,
+.group-2, .task-2,
+.group-3, .task-3,
+.group-4, .task-4,
+.group-5, .task-5,
+.group-6, .task-6 {
+  height: 2.5rem;
+}*/
+
+/*.group-1::after, .task-1::after,
+.group-2::after, .task-2::after,
+.group-3::after, .task-3::after,
+.group-4::after, .task-4::after,
+.group-5::after, .task-5::after,
+.group-6::after, .task-6::after {
+  content: attr(text);
+  display: block;
+  z-index: 3;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  visibility: visible;
+  border-radius: 4px;
+}
+
+.group-2::after, .task-2::after {
+  height: calc(100% * 2);
+}
+
+.group-3::after, .task-3::after {
+  height: calc(100% * 3);
+}
+
+.group-4::after, .task-4::after {
+  height: calc(100% * 4);
+}
+
+.group-5::after, .task-5::after {
+  height: calc(100% * 5);
+}
+
+.group-6::after, .task-6::after {
+  height: calc(100% * 6);
+}*/
+
+

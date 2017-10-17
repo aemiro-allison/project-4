@@ -1,0 +1,10 @@
+.single-task {
+  width: 100%;
+  padding: 1rem;
+  background: #555;
+  border: 0.1rem solid rgb(212,212,212);
+}
+
+.single-task > .title {
+  padding: 2rem 0 0 1rem;
+}

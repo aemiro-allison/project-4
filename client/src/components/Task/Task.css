@@ -1,0 +1,57 @@
+.task {
+  position: relative;
+}
+
+.task-item {
+  padding: 0.125rem 0.375rem;
+}
+
+.task-item > .title {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #717171;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.task-item > .value {
+  color: #f3f3f3;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+.task > .controls {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.control-item {
+  display: inline-block;
+  margin: 0;
+  border: none;
+  background: transparent;
+}
+
+.control-icon {
+  font-size: 22px;
+  padding: 4px;
+  line-height: 4px;
+  vertical-align: middle;
+}
+
+a.control-item:nth-of-type(1) .control-icon {
+  color: rgba(249,211,0, 0.8);
+  font-size: 24px;
+}
+
+a.control-item:nth-of-type(2) .control-icon {
+}
+
+button.control-item .control-icon {
+  color: rgba(255,0,105, 1);
+  cursor: pointer;
+}
