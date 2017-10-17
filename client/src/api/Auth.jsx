@@ -1,4 +1,5 @@
 import React from 'react';
+import state from '../partials/Form/form_state';
 import { withRouter } from 'react-router-dom';
 import authService from './authService';
 
@@ -16,7 +17,9 @@ export default function Auth(Component1, Component2) {
     componentWillMount() {
       // attempt to check if user is logged in.
       authService.authenticate((err, user) => {
-        if (err) {
+        if (!user && !Component2) {
+          this.shouldRedirect(user);
+        }else if (!user && Component2) {
           this.determineComponentToRender(null);
         } else if (Component1 && !Component2) {
           this.shouldRedirect(user);
@@ -29,9 +32,11 @@ export default function Auth(Component1, Component2) {
     shouldRedirect(user) {
       if(!user) {
         console.log('user not logged in.');
+        state.user = null;
         this.props.history.push(`/login`);
       } else {
         console.log('user is logged in');
+        state.user = user;
         this.setState({
           user,
           whichCompToRender: 1,
@@ -42,11 +47,13 @@ export default function Auth(Component1, Component2) {
     determineComponentToRender(user) {
       if (!user) {
         console.log('user not logged in.');
+        state.user = null;
         this.setState({
           whichCompToRender: 1,
         });
       } else {
         console.log('user is logged in');
+        state.user = user;
         this.setState({
           user,
           whichCompToRender: 2,

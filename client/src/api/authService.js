@@ -11,7 +11,9 @@ export default {
       headers: { Authorization: `Bearer ${tokenService.getToken()}` },
     })
       .then(res => callback(null, res.data.user))
-      .catch(err => callback(err));
+      .catch(err => {
+        callback(err);
+      });
   },
 
   register(user, callback) {
@@ -48,7 +50,7 @@ export default {
     tokenService.logout();
 
     setTimeout(() => {
-      history.push('/');
+      window.location.href = "/";
     }, 500);
   },
 };
