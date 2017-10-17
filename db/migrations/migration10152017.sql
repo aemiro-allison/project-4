@@ -1,5 +1,3 @@
-\c on_track;
-
 DROP TABLE IF EXISTS tasks;
 DROP TABLE IF EXISTS groups;
 
