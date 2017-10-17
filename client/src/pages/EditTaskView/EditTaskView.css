@@ -1,0 +1,7 @@
+.edit-task {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+}

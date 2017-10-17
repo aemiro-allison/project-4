@@ -1,19 +1,27 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import request from 'superagent';
+import authService from '../../api/authService';
 import Form from '../../partials/Form';
 import './Login.css';
 
-function Login() {
+
+function Login(props) {
+
   // API REQUEST
   function handleSubmit(e, state) {
     e.preventDefault();
+
+    authService.login(state, (data) => {
+        props.history.push('/tasks');
+    });
   }
 
   return (
     <div className="login">
+      <h2>Login</h2>
       <Form.Container
-        action=""
-        method="GET"
-        id="Login"
+        id="login"
         onSubmit={handleSubmit}>
 
           <Form.Field type="text" name="username" />
@@ -25,4 +33,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default withRouter(Login);

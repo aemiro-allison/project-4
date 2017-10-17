@@ -6,12 +6,13 @@ function Home() {
   return (
     <div className="home">
       <div className="title">
-        <h1>On-Track</h1>
+        <h1>Ontrack</h1>
         <small>Take back control of your life</small>
       </div>
 
       <div className="desc">
-        This should be the desc of my app.
+        Fight off your overwelming load of things to do with Ontrack.
+        Ontrack is a one stop solution for all your organizing needs.
       </div>
 
       <div className="call-to-action">

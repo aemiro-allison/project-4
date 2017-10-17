@@ -1,35 +1,51 @@
 .home {
-  height: 100%;
+  background: url('../../images/on_track_bg.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: calc((100vh - 2 * 16px - 6vh - 2rem) * 1.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white;
+  width: 100vw;
 }
 
 .home > .title {
 }
 
 .home > .title > h1 {
-
+  font-size: 3rem;
+  margin: 0.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .home > .title > small {
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .home > .desc {
   min-width: 300px;
   width: 50vh;
-  margin: 25vh 0 15vh 0;
+  margin: 20vh 0 15vh 0;
 }
 
 .home > .call-to-action > a {
   padding: 0.7rem 1rem;
   margin: 0.25rem;
-  background: dodgerblue;
   border-radius: 0.25rem;
   text-decoration: none;
   color: white;
+}
+
+.home > .call-to-action > a:nth-of-type(1) {
+  background: rgba(0,201,255, 0.8);
+}
+
+.home > .call-to-action > a:nth-of-type(2) {
+  background: rgba(44, 44, 44, 0.8);
 }

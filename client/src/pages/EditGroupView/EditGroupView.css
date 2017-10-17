@@ -1,0 +1,7 @@
+.edit-group {
+  width: 100%;
+  min-height: 100%;
+  background: yellow;
+  display: flex;
+  justify-content: center;
+}
