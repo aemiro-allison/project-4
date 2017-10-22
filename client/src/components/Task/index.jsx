@@ -14,21 +14,28 @@ function truncate (str, len = 20) {
 }
 
 function handleDelete(e, id, state, history) {
-    e.preventDefault();
-    request
-      .delete(`/tasks/${id}`)
-      .then(res => {
-        console.log('task deleted');
-        history.push('/tasks');
-      })
-      .catch(err => console.error(err));
+  e.preventDefault();
+  request
+    .delete(`/tasks/${id}`)
+    .then(res => {
+      console.log('task deleted');
+      history.push('/tasks');
+    })
+    .catch(err => console.error(err));
 }
 
 function Task(props) {
+  const goToNext = props.match.params.id ? '/tasks' : `/tasks/${props.task.id}`;
+  const goToNextIcon = props.match.params.id ? 'arrow-left' : 'arrow-right';
+
+  if (!props.task.name) return null;
 
   return (
       <div className="task">
         <div className="controls">
+          <Link className="control-item" to={goToNext}>
+            <FontAwesome className="control-icon" name={goToNextIcon} />
+          </Link>
           <Link className="control-item" to={`/tasks/edit/${props.task.id}`}>
             <FontAwesome className="control-icon" name="edit" />
           </Link>

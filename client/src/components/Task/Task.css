@@ -44,11 +44,12 @@
 }
 
 a.control-item:nth-of-type(1) .control-icon {
-  color: rgba(249,211,0, 0.8);
-  font-size: 24px;
+  color: limegreen;
 }
 
 a.control-item:nth-of-type(2) .control-icon {
+  color: rgba(249,211,0, 0.8);
+  font-size: 24px;
 }
 
 button.control-item .control-icon {

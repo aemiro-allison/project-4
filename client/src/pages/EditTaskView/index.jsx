@@ -10,7 +10,6 @@ class EditTaskView extends Component {
     super(props);
     this.state = {
       task: {},
-      groups: [],
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -24,7 +23,6 @@ class EditTaskView extends Component {
 
         this.setState(prevState => ({
           task: res.body.task,
-          groups: res.body.groups,
         }));
       })
       .catch(err => console.error(err));
@@ -40,7 +38,7 @@ class EditTaskView extends Component {
         .put(`/tasks/${self.props.match.params.id}`)
         .send(state)
           .then((res) => {
-            history.push(`/tasks/${self.state.task.id}`);
+            history.push(`/tasks`);
           })
           .catch(err => console.log(err));
     }
