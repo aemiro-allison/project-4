@@ -19,18 +19,16 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
-app.use(express.static(path.join(__dirname, 'client')));
-
-app.get('/', (req, res) => {
-  res.json({
-    message: 'home route/page.',
-  });
-});
+app.use(express.static(path.resolve(__dirname, 'client', 'build')));
 
 
 app.use('/tasks', taskRoutes);
 app.use('/groups', groupRoutes);
 app.use('/auth', authRoutes);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 
 app.use('*', (req, res) => {
   res.json({
