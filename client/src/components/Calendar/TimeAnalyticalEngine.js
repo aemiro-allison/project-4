@@ -1,5 +1,4 @@
-import moment from 'moment';
-import _ from './helpers';
+import utilties from './utils';
 
 const constants = [
   [
@@ -16,8 +15,10 @@ const TimeAnalyticalEngine = {
     // go through each day, move group into each day.
     let days = [];
 
-    const daysWithConstants = _.days.map(_.populateWithConstants(constants));
-    days = daysWithConstants.map(_.populate(_.sort(tasks, 'attributes.priority_lvl', 'DESC')));
+    const daysWithConstants = utilties.days.map(utilties.populateWithConstants(constants));
+    days = daysWithConstants.map(utilties.populate(
+        utilties.sort(tasks, 'attributes.priority_lvl', 'DESC')
+    ));
     console.log(days);
     return days;
   }

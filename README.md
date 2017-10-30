@@ -1,14 +1,5 @@
 # Project Overview
-*"Take back control of your life."*
-
-<br>
-
-TODO: Redo-all images
-
-TODO: Re-size all images
-
-<br>
-
+Fight off your overwelming load of things to do with OnTrack. OnTrack is a one stop solution for all your organizing needs. Our app will intelligently schedule users' task do be done in the most efficient way possible; creating more time for you to enjoy life.
 
 Quick Links:
 - [Project Description](#project-description)
@@ -25,15 +16,31 @@ Quick Links:
 - [Issues and Resolutions](#issues-and-resolutions)
 
 
-### Project Description
-Fight off your overwelming load of things to do with OnTrack. OnTrack is a one stop solution for all your organizing needs. Our app will intelligently schedule users' task do be done in the most efficient way possible; creating more time for you to enjoy life.
+## Installing the App
+### Requirements:
 
-This application will...
+- node version used: `>=v8.5.0`
+
+- npm version used: `>=5.3.0`
+
+- Have postgresSQL installed and running on your machine.
 
 
-### Installation
-To install the app, follow the instructions below:
-> Installation instructions...
+<br>
+
+
+First fork and clone `git clone <fork url>` into a directory of your chose.
+
+Run `npm install` to install the project's dependencies.
+
+Run `npm run setup` which will create and popluate a postgres database.
+
+After, run `npm run start` to start the server.
+
+
+<br>
+<hr>
+<br>
 
 ### MVP
 Main features and why....
