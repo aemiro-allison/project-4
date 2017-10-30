@@ -101,10 +101,12 @@ const constants = [
 
 const TimeAnalyticalEngine = {
   populate(tasks) {
-    // go through each day, move group into each day.
     let days = [];
 
+    // go through each day, move each constant into its time slot of each day.
     const daysWithConstants = utilties.days.map(utilties.populateWithConstants(constants));
+    
+    // go through each day (with constants already in place) and move each task into an available time slot.
     days = daysWithConstants.map(utilties.populate(
         utilties.sort(tasks, 'attributes.priority_lvl', 'DESC')
     ));
