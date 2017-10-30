@@ -10,10 +10,7 @@ Quick Links:
 - [Schedule for Completion](#schedule-for-completion)
 - [User Stories](#user-stories)
 - [OnTrack Wireframes](#wireframes)
-- [Research](#research)
 - [Code Snippet from Project](#code-snippet-from-ontrack)
-- [Change Log](#change-log)
-- [Issues and Resolutions](#issues-and-resolutions)
 
 
 ## Installing the App
